@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <header>
+        <h1>Clinica ABC Health</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Cadastro</h2>
+        <form action="cadastraCliente.php" method="post">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <p>
+                    <label for="nome" >Nome:</label>
+                    <input type="text" id="nome" name="nome" required minlength="2" maxlength="50" autofocus>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" id="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                </p>
+                <p>
+                    <label for="idade">Idade:</label>
+                    <input type="number" name="idade" id="idade">
+                </p>
+                <p>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" required>
+                </p>
+                <p>
+                    <label for="data">Data de Nascimento:</label>
+                    <input type="date" name="data" id="data">
+                </p>
+                <div>
+                    <p>Gênero:</p>
+                    <input type="radio" name="genero" id="masculino" value="masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" name="genero" id="feminino" value="feminino">
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" name="genero" id="outro" value="outro">
+                    <label for="outro">Outro</label>
+                </div>
+                <p>
+                    <label for="estadocivil">Estado civil:</label>
+                    <select name="estadocivil" id="estadocivil">
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="divorciado">Divorciado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Endereço de Entrega</legend>
+                <p>
+                    <label for="cep">CEP:</label>
+                    <input type="text" name="cep" id="cep" required pattern="\d{5}-\d{3}" placeholder="00000-000">
+                </p>
+                <div>
+                    <p>Tipo de Logradouro:</p>
+                    <input type="checkbox" name="tipodelogradouro" id="rua" value="rua">
+                    <label for="rua">Rua</label>
+
+                    <input type="checkbox" name="tipodelogradouro" id="avenida" value="avenida">
+                    <label for="avenida">Avenida</label>
+
+                    <input type="checkbox" name="tipodelogradouro" id="praca" value="praca">
+                    <label for="praca">Praça</label>
+
+                    <input type="checkbox" name="tipodelogradouro" id="travessa" value="travessa">
+                    <label for="travessa">Travessa</label>
+                </div>
+                <p>
+                    <label for="logradouro">Logradouro:</label>
+                    <input type="text" name="logradouro" id="logradouro" required>
+                </p>
+                <p>
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" id="bairro" required>
+                </p>
+                <p>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" id="cidade" required>
+                </p>
+                <p >
+                    <label for="estado">Estado:</label>
+                    <input type="text" name="estado" id="estado" required readonly value="PE">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Informações Adicionais</legend>
+                <p>
+                    <label for="observacoes">Observações:</label>
+                    <textarea name="observacoes" id="observacoes" cols="30" rows="10"></textarea>
+                </p>
+                <p hidden>
+                    <label for="oferta">Deseja receber nossa ofertas?</label>
+                    <input type="checkbox" name="oferta" id="oferta" value="sim">
+                    <label for="oferta">Sim</label>
+                    <input type="checkbox" name="oferta" id="nao" value="nao">  
+                    <label for="nao">Não</label>
+                </p>
+            </fieldset>
+            <input type="button" value="Enviar">
+        </form>
+    </main>
+</body>
+</html>
